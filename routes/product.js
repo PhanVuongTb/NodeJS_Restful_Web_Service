@@ -1,33 +1,17 @@
 import express from "express"
+import { deleteProduct, getProduct, getProductDetail, postProduct, putProduct } from "../controllers/product";
 const router = express.Router();
 
-const products = [
-    {id:1,name:"Product 1"},
-    {id:2,name:"Product 2"}
-]
 
-router.get('/products',(request,response)=>{
-    response.json(products)
-})
-router.get('/products/:id',(request,response)=>{
-    const product = products.find(item => item.id === +request.params.id)
-    response.json(product)
-})
+
+router.get('/products', getProduct);
+router.get('/products/:id', getProductDetail);
 // thêm
-router.post('/products',(request,response)=>{
-    products.push(request.body)
-    response.json(products)
-})
+router.post('/products', postProduct);
 // xoa 
-router.delete('/products/:id',(request,response)=>{
-    const product = products.find(item => item.id != +request.params.id)
-    response.json(product)
-})
+router.delete('/products/:id', deleteProduct);
 // sửa
-router.put('/products/:id',(request,response)=>{
-    const product = products.map(item => item.id === +request.params.id)
-    response.json(product)
-})
+router.put('/products/:id', putProduct);
 
 
 export default router;
