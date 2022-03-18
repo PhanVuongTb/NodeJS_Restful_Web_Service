@@ -1,11 +1,9 @@
-export const checkAuth = (require,response,next)=>{
+export const checkAuth = (request,response,next)=>{
     const isAdmin = true;
     if(isAdmin){
-        console.log('xin chào admin');
+        console.log("Xin chao admin")
         next()
     }else{
-        console.log('Bạn không có quyền truy cập');
+        console.log("Ban khong co quyen truy cap")
     }
-
-    
 }

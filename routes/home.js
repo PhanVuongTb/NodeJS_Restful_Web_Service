@@ -1,14 +1,12 @@
-// const express = require('express');
 import express from "express";
-const route = express.Router();
+const router = express.Router();
 
-route.get('/',(request,response)=>{
+router.get('/', (request,response)=>{
     response.send(`
-        <h1> Home Page <\h1>
-        <p> Content text </p>
-        <img src="https://www.apple.com/v/apple-events/shared/a/images/overview/iphone-13-pro/iphone13pro__em6q3cyq8ygm_large.jpg">
+        <h1>Home Page</h1>
+        <p>Content text</p>
+        <img src="https://genk.mediacdn.vn/139269124445442048/2022/3/8/iphone-13overviewfpjuzw2ncqmyog-16466798051051604834665.png">
     `);
 })
 
-export default route;
-// module.exports = route;
+export default router;

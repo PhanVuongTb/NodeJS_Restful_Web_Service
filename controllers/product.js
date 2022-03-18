@@ -1,7 +1,6 @@
-const products = [
-    { id: 1, name: "Product 1" },
-    { id: 2, name: "Product 2" }
-]
+import mongoose from "mongoose";
+
+const Product = mongoose.model("Product", { name: String});
 
 export const getProduct = (request, response) => {
     response.json(products)
